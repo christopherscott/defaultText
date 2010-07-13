@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+  	input {display: block; margin-bottom: 1em;}
+  	.test {position: relative; top:0; left: 0}
+  </style>
+</head>
+<body>
+
+
+<form action="POST">
+	<fieldset>
+		<input type="text" class="pretext" value="title info"/>
+		<input type="text" class="pretext" alt="alternative text"/>
+		<input type="text" class="pretext" pretext="custom attribute" />
+		<label>Checkbox</label><input type="checkbox" class="pretext" pretext="custom attribute" />
+		<textarea>This is a test</textarea>
+		<input type="submit" />
+	</fieldset>
+</form>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.preText.js"></script>
+<script type="text/javascript">
+jQuery(function($) {
+	$(".pretext").preText("pretext");
+});
+</script>
+
+</body>
+</html>
