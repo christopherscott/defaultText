@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+  	input {display: block; margin-bottom: 1em;}
+  	.test {position: relative; top:0; left: 0}
+	.wrapper {width: 500px; margin: 0 auto;}
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+<form action="POST">
+	<fieldset>
+		<input type="text" class="pretext" value="value"/>
+		<input type="text" class="pretext" alt="alt"/>
+		<input type="text" class="pretext" title="title"/>
+		<input type="text" class="argument" />
+		<label>Checkbox</label><input type="checkbox" class="pretext" pretext="custom attribute" />
+		<textarea>This is a test</textarea>
+		
+	</fieldset>
+</form>
+<button>click me</button>
+
+<script type="text/javascript" src="../lib/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../jquery.defTextFancy.js"></script>
+<script type="text/javascript">
+jQuery(function($) {
+	$("button").click(function() {
+		$(".pretext").defTextFancy();
+		$(".argument").defTextFancy({"defaultText" : "argument text"});
+	}); 
+});
+</script>
+
+</body>
+</html>
