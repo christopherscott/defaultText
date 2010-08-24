@@ -7,12 +7,38 @@
   	input {display: block; margin-bottom: 1em;}
   	.test {position: relative; top:0; left: 0}
 	.wrapper {width: 500px; margin: 0 auto;}
+	fieldset { margin: 50px auto;}
   </style>
 </head>
 <body>
 
 <div class="wrapper">
-<form action="POST">
+<form>
+	<fieldset>
+		<div class="field">
+			<label for="username">Login:</label>
+			<input type="text" class="basic" alt="username" name="username"/>
+		</div>
+		<div>
+			<label for="password">Password:</label>
+			<input type="text" class="basic" title="password" name="password">
+		</div>
+		<div>
+			<label for="location">Location:</label>
+			<input type="text" class="basic" title="Somewhere, TX" name="location" />
+		</div>
+	</fieldset>
+	<fieldset>
+		<input type="text" class="basic" alt="alt"/>
+		<input type="text" class="basic" title="title"/>
+		<input type="text" class="argument" />
+		<label>Checkbox</label>
+		<input type="checkbox" class="deftext" pretext="custom attribute" />
+		<textarea class="txtarea">This is a test</textarea>
+	</fieldset>
+</form>
+
+<form>
 	<fieldset>
 		<input type="text" class="basic" value="value"/>
 		<input type="text" class="basic" alt="alt"/>
@@ -21,10 +47,21 @@
 		<label>Checkbox</label>
 		<input type="checkbox" class="deftext" pretext="custom attribute" />
 		<textarea class="txtarea">This is a test</textarea>
-		
 	</fieldset>
 </form>
-<button>click me</button>
+
+<form>
+	<fieldset>
+		<input type="text" class="basic" value="value"/>
+		<input type="text" class="basic" alt="alt"/>
+		<input type="text" class="basic" title="title"/>
+		<input type="text" class="argument" />
+		<label>Checkbox</label>
+		<input type="checkbox" class="deftext" pretext="custom attribute" />
+		<textarea class="txtarea">This is a test</textarea>
+	</fieldset>
+</form>
+
 
 <script type="text/javascript" src="../lib/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="../jquery.defTextFancy.js"></script>
