@@ -18,7 +18,7 @@ http://christopher-scott.com
 			innerTag : "span",
 			outerTag : "div",
 			inSpeed : 150,
-			outSpeed : 150
+			outSpeed : 150,
 		}, options);
 			
 		return this.each(function() {

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>defTextFancy jQuery Plug-In</title>
   <style type="text/css">
   	input {display: block; margin-bottom: 1em;}
   	.test {position: relative; top:0; left: 0}
@@ -14,12 +14,13 @@
 <div class="wrapper">
 <form action="POST">
 	<fieldset>
-		<input type="text" class="pretext" value="value"/>
-		<input type="text" class="pretext" alt="alt"/>
-		<input type="text" class="pretext" title="title"/>
+		<input type="text" class="basic" value="value"/>
+		<input type="text" class="basic" alt="alt"/>
+		<input type="text" class="basic" title="title"/>
 		<input type="text" class="argument" />
-		<label>Checkbox</label><input type="checkbox" class="pretext" pretext="custom attribute" />
-		<textarea>This is a test</textarea>
+		<label>Checkbox</label>
+		<input type="checkbox" class="deftext" pretext="custom attribute" />
+		<textarea class="txtarea">This is a test</textarea>
 		
 	</fieldset>
 </form>
@@ -29,12 +30,17 @@
 <script type="text/javascript" src="../jquery.defTextFancy.js"></script>
 <script type="text/javascript">
 jQuery(function($) {
-	$("button").click(function() {
-		$(".pretext").defTextFancy();
-		$(".argument").defTextFancy({"defaultText" : "argument text"});
-	}); 
+	
+	// basic use, looks for value in 1. "value" 2. "alt" or 3. "title"
+	$(".basic").defTextFancy();
+	
+	// Also works by sending an object with the property "defaultText"
+	$(".argument").defTextFancy({"defaultText" : "passed argument"});
+	
+	// works on textareas too
+	$(".txtarea").defTextFancy();
+	
 });
 </script>
-
 </body>
 </html>
