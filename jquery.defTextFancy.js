@@ -38,7 +38,8 @@ http://christopher-scott.com
 						"left" : offsetLeft + "px",
 						"font-family" : $this.css("font-family"),
 						"font-size" : $this.css("font-size"),
-						"color" : options.color
+						"color" : options.color,
+						"width" : $this.css("width")
 						}
 				});
 

@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <title>defTextFancy jQuery Plug-In</title>
   <style type="text/css">
-  	input {display: block; margin-bottom: 1em;}
-  	.test {position: relative; top:0; left: 0}
-	.wrapper {width: 500px; margin: 0 auto;}
-	fieldset { margin: 50px auto;}
-  </style>
+  		input {display: block; margin-bottom: 1em;}
+  		.test {position: relative; top:0; left: 0}
+		.wrapper {width: 500px; margin: 0 auto;}
+		fieldset { margin: 50px auto;}
+		textarea { padding: 3px;}
+  	</style>
+	
 </head>
 <body>
 
@@ -29,36 +31,25 @@
 		</div>
 	</fieldset>
 	<fieldset>
-		<input type="text" class="basic" alt="alt"/>
-		<input type="text" class="basic" title="title"/>
-		<input type="text" class="argument" />
-		<label>Checkbox</label>
-		<input type="checkbox" class="deftext" pretext="custom attribute" />
-		<textarea class="txtarea">This is a test</textarea>
+		<div>
+			<label for="arg1">Custom argument 1:</label>
+			<input type="text" class="arg1" />
+		</div>
+		<div>
+			<label for="arg2">Custom argument 2:</label>
+			<input type="text" class="arg2" />
+		</div>
+		<div>
+			<label for="arg3">Custom argument 3:</label>
+			<input type="text" class="arg3" />
+		</div>
+		<div>
+			<label for="remember">Remember info?</label>
+			<input type="checkbox" name="remember" />
+		</div>
 	</fieldset>
-</form>
-
-<form>
 	<fieldset>
-		<input type="text" class="basic" value="value"/>
-		<input type="text" class="basic" alt="alt"/>
-		<input type="text" class="basic" title="title"/>
-		<input type="text" class="argument" />
-		<label>Checkbox</label>
-		<input type="checkbox" class="deftext" pretext="custom attribute" />
-		<textarea class="txtarea">This is a test</textarea>
-	</fieldset>
-</form>
-
-<form>
-	<fieldset>
-		<input type="text" class="basic" value="value"/>
-		<input type="text" class="basic" alt="alt"/>
-		<input type="text" class="basic" title="title"/>
-		<input type="text" class="argument" />
-		<label>Checkbox</label>
-		<input type="checkbox" class="deftext" pretext="custom attribute" />
-		<textarea class="txtarea">This is a test</textarea>
+		<textarea id="comments" cols="30" rows="10" alt="Please enter your comments, suggestions, and questions here..."></textarea>
 	</fieldset>
 </form>
 
@@ -66,18 +57,21 @@
 <script type="text/javascript" src="../lib/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="../jquery.defTextFancy.js"></script>
 <script type="text/javascript">
-jQuery(function($) {
-	
-	// basic use, looks for value in 1. "value" 2. "alt" or 3. "title"
-	$(".basic").defTextFancy();
-	
-	// Also works by sending an object with the property "defaultText"
-	$(".argument").defTextFancy({"defaultText" : "passed argument"});
-	
-	// works on textareas too
-	$(".txtarea").defTextFancy();
-	
-});
+	jQuery(function($) {
+
+		// basic use, looks for value in 1. "value" 2. "alt" or 3. "title"
+		$(".basic").defTextFancy();
+
+		// Also works by sending an object with the property "defaultText"
+		$(".arg1").defTextFancy({"defaultText" : "@twitter username"});
+		$(".arg2").defTextFancy({"defaultText" : "your email@address.com"});
+		$(".arg3").defTextFancy({"defaultText" : "What is your favorite color?"});
+
+		// works on textareas too
+		$("#comments").defTextFancy();
+
+	});
 </script>
+
 </body>
 </html>
